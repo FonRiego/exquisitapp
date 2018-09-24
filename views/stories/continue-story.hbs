@@ -2,7 +2,7 @@
   <img src="{{story.image_url}}">
 </div>
 
-<form action="/new" method="POST">
+<form action="/story/{{story._id}}" method="POST">
   <input id="story" type="hidden" name="image_url" value="{{story._id}}">
   {{#if middle}}
     <label>Introduce el verbo y complemento directo/indirecto de la historia para continuarla</label>

@@ -15,28 +15,86 @@ const Collab = require('../models/Collab')
 
 //nueva colaboración!!!!
 
-router.post('/new/:storyId', (req, res, next) => { 
-  let {content, userId} = req.body; 
-  Collab.create({content, user: userId})
-  .then( () => {
-    console.log("Colaboración creada");
-    res.redirect(redirect || '/storyId');
+router.get('/story/new', (req, res, next) => {
+  res.render("stories/new")
+});
+
+router.post('/story/new', (req, res, next) => { 
+  let content = req.body.content;
+  let image_url = req.body.image_url;
+  let user = req.user._id;
+  Collab.create({content, user})
+  .then( collab => {
+    return Story.create({
+      collaborations: [collab._id],
+      image_url
+    })
+  })
+  .then( story => {
+    res.redirect("/");
   })
   .catch(e => next(e))
 });
 
-//nueva story!!!!
+router.get('/story/:id', (req,res, next) => {
+  let id = req.params.id
+  Story.findById(id)
+  .populate({ 
+    path: 'collaborations',
+    populate: {
+      path: 'user'
+    } 
+ })
+  .then( story => {
+    if (story.open){
+      let middle = false;
+      if (story.collaborations.length == 1) {
+        middle = true;
+      }
+      res.render('stories/continue-story', {story, middle})
+    } else {  
+      res.render('stories/finished-story', story)
+    }
+  })
+})
 
-router.post('/new', (req, res, next) => {
-  let {content, userId} = req.body;
+router.post('/story/:id', (req, res, next) => {
+  let id = req.params.id;
+  let content = req.body.content;
+  let user = req.user._id;
+  Collab.create({content, user})
+  .then( collab => {
+    return Story.findByIdAndUpdate(id, { $push: { collaborations: collab._id } }, {new: true})
+  })
+  .then( story => {
+    console.log(story)
+    console.log("ESTOY ABIERTO? " + story.open)
+    console.log(story.collaborations.length)
+    if (story.collaborations.length == 3){
+      console.log("ha entrado!")
+      return Story.findByIdAndUpdate(id, { open: false})
+      .then( story => {
+        console.log(story.open)
+        res.redirect(`/story/${id}`)
+      })
+    } else {
+      res.redirect('/')
+    }
+  })
+})
 
-  Collab.create({content}).populate('user' = userId)
-  .then( (collab) => {
-    Story.create({})
-    .then ( ()   => {
-      res.render('');
-    })
-  .catch(e => next(e))
-});
+// //nueva story!!!!
+
+// router.post('/new', (req, res, next) => {
+//   let {content, userId} = req.body;
+
+//   Collab.create({content}).populate('user' = userId)
+//   .then( (collab) => {
+//     Story.create({})
+//     .then ( ()   => {
+//       res.render('');
+//     })
+//   .catch(e => next(e))
+// });
 
 module.exports = router;
