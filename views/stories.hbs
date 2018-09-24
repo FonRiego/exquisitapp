@@ -1,0 +1,9 @@
+
+{{#each stories}}
+<img src="{{this.image_url}}" alt="">
+<p>
+  {{#each this.collaborations}}
+  {{this.content}}
+  {{/each}}
+</p>
+{{/each}}
