@@ -1,0 +1,21 @@
+
+<div id="giphy-image">
+  <h2>THE SITUATION:</h2>
+  <img src="{{image_url}}">
+</div>
+<div>
+  <h2>THE STORY:</h2>
+  <p>
+    {{#each collaborations}}
+    {{content}}
+    {{/each}}
+  </p>
+</div>
+<div>
+  <h3>THE AUTHORS:</h3>
+  <p>
+    {{#each collaborations}}
+    {{user.username}}
+    {{/each}}
+  </p>
+</div>
