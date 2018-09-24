@@ -4,7 +4,10 @@ const Schema   = mongoose.Schema;
 const storySchema = new Schema({
   image_url: String,
   collaborations: [{type: Schema.Types.ObjectId, ref: "Collab"}],
-  open: Boolean,
+  open: {
+    type: Boolean,
+    default: true
+  }
 }, {
   timestamps: {
     createdAt: 'created_at',
