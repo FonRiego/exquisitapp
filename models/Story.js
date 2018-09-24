@@ -3,9 +3,8 @@ const Schema   = mongoose.Schema;
 
 const storySchema = new Schema({
   image_url: String,
-  collaborators: [{type: Schema.Types.ObjectId, ref: "User"}],
-  status: Number,
-  open: {type: Boolean, default: true}
+  collaborations: [{type: Schema.Types.ObjectId, ref: "Collab"}],
+  open: Boolean,
 }, {
   timestamps: {
     createdAt: 'created_at',
@@ -13,5 +12,5 @@ const storySchema = new Schema({
   }
 });
 
-const Story = mongoose.model('Story', userSchema);
+const Story = mongoose.model('Story', storySchema);
 module.exports = Story;
