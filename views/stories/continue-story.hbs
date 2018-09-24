@@ -1,0 +1,16 @@
+<div id="giphy-image">
+  <img src="{{story.image_url}}">
+</div>
+
+<form action="/new" method="POST">
+  <input id="story" type="hidden" name="image_url" value="{{story._id}}">
+  {{#if middle}}
+    <label>Introduce el verbo y complemento directo/indirecto de la historia para continuarla</label>
+    <input id="content" type="text" name="content">
+    <button>Continua la historia</button>
+  {{else}}
+    <label>Introduce los complementos circunstanciales de la historia para acabarla</label>
+    <input id="content" type="text" name="content">
+    <button>Acaba la historia</button>
+  {{/if}}
+</form>
