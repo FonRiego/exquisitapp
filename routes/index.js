@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/stories', (req, res, next) => {
-  Story.find()
+  Story.find({"open": false})
   .populate('collaborations')
   .then(stories => {
     res.render('stories', {stories})
