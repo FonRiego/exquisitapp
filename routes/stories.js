@@ -3,6 +3,7 @@ const router  = express.Router();
 const Story = require('../models/Story')
 const User = require('../models/User')
 const Collab = require('../models/Collab')
+const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
 // router.get('/stories/new', (req, res, next) => {
 //   Story.find({"open": true})
@@ -15,11 +16,11 @@ const Collab = require('../models/Collab')
 
 //nueva colaboración!!!!
 
-router.get('/story/new', (req, res, next) => {
+router.get('/story/new', ensureLoggedIn('/login'), (req, res, next) => {
   res.render("stories/new")
 });
 
-router.post('/story/new', (req, res, next) => { 
+router.post('/story/new', ensureLoggedIn('/login'), (req, res, next) => { 
   let content = req.body.content;
   let image_url = req.body.image_url;
   let user = req.user._id;
@@ -58,7 +59,7 @@ router.get('/story/:id', (req,res, next) => {
   })
 })
 
-router.post('/story/:id', (req, res, next) => {
+router.post('/story/:id', ensureLoggedIn('/login'), (req, res, next) => {
   let id = req.params.id;
   let image_url = req.body.image_url;
   let content = req.body.content;

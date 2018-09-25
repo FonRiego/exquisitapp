@@ -1,0 +1,33 @@
+/*
+Almacena todo lo que vayas a rehusar...
+Colores, fuentes, alturas...
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Signika:400,600,700');
+/* colors */
+
+// $main-color:rgb(142, 32, 176);
+// $accent-color:rgb(197, 252, 96);
+// $secondary-main-color:rgb(216, 96, 252);
+// $secondary-accent-color:rgb(131, 175, 49);
+$main-color:rgb(142, 32, 176);
+$accent-color:rgb(216, 96, 252);
+$secondary-main-color:rgb(216, 96, 252);
+$secondary-accent-color:rgb(142, 32, 176);
+$dark-grey: rgb(51, 51, 51);
+$light-grey: rgb(185, 185, 185);
+$extra-light-grey: #e3e3e3;
+$white:white;
+$code-color:rgb(255, 100, 100);
+$editor-color:#232e32;
+/* fonts */
+$main-font:'Signika', sans-serif;
+$accent-font:'Signika', sans-serif;
+$serif-font: 'Open Sans', sans-serif;
+$body-font: 'Open Sans', sans-serif;
+$code-font: 'Share Tech Mono', monospace;
+$regular-size:16px;
+/* others */
+$header-height:60px;
+$footer-height:45px;
+$column-padding: 0 15px;
+
