@@ -37,7 +37,7 @@ app.use(cookieParser());
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
+  src:  path.join(__dirname, 'public/stylesheets/scss'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));

@@ -1,0 +1,225 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Signika:400,700');
+
+$main-color:rgb(142, 32, 176);
+$accent-color:rgb(197, 252, 96);
+$secondary-accent-color:rgb(216, 96, 252);
+$dark-grey: rgb(51, 51, 51);
+$light-grey: rgb(185, 185, 185);
+$extra-light-grey: #e3e3e3;
+$white:white;
+$code-color:rgb(255, 100, 100);
+$editor-color:#232e32;
+/* fonts */
+$accent-font:'Signika', sans-serif;
+$body-font: 'Open Sans', serif;
+$code-font: 'Share Tech Mono', monospace;
+$regular-size:16px;
+/* others */
+// $header-height:60px;
+// $footer-height:45px;
+// $column-padding: 0 15px;
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote {
+    &:before,
+    &:after {
+        content: '';
+        content: none;
+    }
+}
+
+q {
+    &:before,
+    &:after {
+        content: '';
+        content: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+  font-size: $regular-size;
+  font-family: $body-font; 
+}
+
+h1 {
+  font-size: 2.2em;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin: 15px 0;
+}
+h1,h2,h3,h4,h5,h6 {
+  &.bordered {
+      display: inline-block;
+      padding-bottom: 5px;
+      border-bottom: 1px dotted $light-grey
+  }
+  small {
+      font-size: .5em;
+  }
+}
+
+
+img {
+  max-width:100%;
+}
+
+a{
+  color: $secondary-accent-color;
+  text-decoration: none;
+//   @include transition(color .15s linear);
+  &:hover {
+      color: $accent-color;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #00B7FF;
+}
+
+a {
+  color: #00B7FF;
+}

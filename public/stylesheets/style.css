@@ -1,6 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Signika:400,700");
+/* fonts */
+/* others */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-size: 16px;
+  font-family: "Open Sans", serif; }
+
+h1 {
+  font-size: 2.2em;
+  margin: 20px 0; }
+
+h2 {
+  font-size: 1.8em;
+  margin: 15px 0; }
+
+h1.bordered, h2.bordered, h3.bordered, h4.bordered, h5.bordered, h6.bordered {
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #b9b9b9; }
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-size: .5em; }
+
+img {
+  max-width: 100%; }
+
+a {
+  color: #d860fc;
+  text-decoration: none; }
+  a:hover {
+    color: #c5fc60; }
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #00B7FF; }
 
 a {
   color: #00B7FF; }
