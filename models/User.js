@@ -3,7 +3,8 @@ const Schema   = mongoose.Schema;
 
 const userSchema = new Schema({
   username: String,
-  password: String
+  password: String,
+  avatar: {type: String, default:"/images/user_placeholder.png"}
 }, {
   timestamps: {
     createdAt: 'created_at',
