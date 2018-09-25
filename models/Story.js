@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const storySchema = new Schema({
-  image_url: String,
   collaborations: [{type: Schema.Types.ObjectId, ref: "Collab"}],
   open: {
     type: Boolean,

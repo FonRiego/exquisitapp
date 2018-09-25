@@ -3,6 +3,7 @@ const Schema   = mongoose.Schema;
 
 const collabSchema = new Schema({
   user: {type: Schema.Types.ObjectId, ref:'User'},
+  image_url: String,
   content: String
 }, {
   timestamps: {

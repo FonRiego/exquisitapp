@@ -60,21 +60,17 @@ router.get('/story/:id', (req,res, next) => {
 
 router.post('/story/:id', (req, res, next) => {
   let id = req.params.id;
+  let image_url = req.body.image_url;
   let content = req.body.content;
   let user = req.user._id;
-  Collab.create({content, user})
+  Collab.create({content, user, image_url})
   .then( collab => {
     return Story.findByIdAndUpdate(id, { $push: { collaborations: collab._id } }, {new: true})
   })
   .then( story => {
-    console.log(story)
-    console.log("ESTOY ABIERTO? " + story.open)
-    console.log(story.collaborations.length)
     if (story.collaborations.length == 3){
-      console.log("ha entrado!")
       return Story.findByIdAndUpdate(id, { open: false})
       .then( story => {
-        console.log(story.open)
         res.redirect(`/story/${id}`)
       })
     } else {
