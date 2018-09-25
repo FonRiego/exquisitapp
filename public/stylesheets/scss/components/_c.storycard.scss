@@ -1,0 +1,15 @@
+.story-card{
+  width: 270px;
+  margin-right: 20px;
+  &:last-child{
+  margin-right: 0;
+  }
+  .card-hero-header {
+    width: 100%;
+    background-color: $secondary-main-color;
+    display: flex;
+    align-content: center;
+    padding: 40px;
+  }
+}
+

@@ -13,6 +13,7 @@ const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
 const User = require("./models/User");
+
     
 
 mongoose
@@ -35,6 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -42,10 +44,11 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-      
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials')
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
@@ -70,7 +73,8 @@ app.use(session({
   secret: 'irongenerator',
   resave: true,
   saveUninitialized: true,
-  store: new MongoStore( { mongooseConnection: mongoose.connection })
+  cookie: { maxAge: 60000 },
+  store: new MongoStore( { mongooseConnection: mongoose.connection, ttl: 24 * 60 * 60 })
 }))
 app.use(flash());
 require('./passport')(app);
@@ -97,5 +101,8 @@ app.use('/auth', authRoutes);
  
 const storiesRoutes = require('./routes/stories');
 app.use('/', storiesRoutes);
+
+const dashboardRoutes = require('./routes/dashboard');
+app.use('/', dashboardRoutes);
 
 module.exports = app;

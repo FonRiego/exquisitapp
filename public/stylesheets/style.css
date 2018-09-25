@@ -486,6 +486,18 @@ footer {
   flex-flow: column nowrap;
   justify-content: center; }
 
+.story-card {
+  width: 270px;
+  margin-right: 20px; }
+  .story-card:last-child {
+    margin-right: 0; }
+  .story-card .card-hero-header {
+    width: 100%;
+    background-color: #83af31;
+    display: flex;
+    align-content: center;
+    padding: 40px; }
+
 .t-right {
   text-align: right; }
 

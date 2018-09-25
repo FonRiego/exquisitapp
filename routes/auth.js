@@ -13,7 +13,7 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/dashboard",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
@@ -56,6 +56,7 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.get("/logout", (req, res) => {
+  req.session.destroy();
   req.logout();
   res.redirect("/");
 });
