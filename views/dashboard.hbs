@@ -9,7 +9,7 @@
       {{> storyCard}}
     {{/each}}
     </div>
-  <a href="/dashboard/openstories"><h2>Ver más historias para continuar...</h2></a>
+    <a href="/dashboard/openstories"><h2>Ver más historias para continuar...</h2></a>
   </div>
 
   <div class="container">
@@ -19,6 +19,17 @@
       {{> storyCard}}
     {{/each}}
     </div>
-  //<a href="/dashboard/mystories"><h2>Ver más historias en las que has participado</h2></a>
+    <a href="/dashboard/mystories"><h2>Ver más historias en las que has participado</h2></a>
   </div>
+
+  <div class="container">
+    <h2>Explorar historias</h2>
+    <div class="card-deck">
+    {{#each stories}}
+      {{> storyCard}}
+    {{/each}}
+    </div>
+    <a href="/stories"><h2>Ver más historias terminadas</h2></a>
+  </div>
+
 </main>

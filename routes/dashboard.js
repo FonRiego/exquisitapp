@@ -29,9 +29,19 @@ router.get('/dashboard', ensureLoggedIn('/login'), (req, res, next) => {
   })
   .populate('users')
 
-  Promise.all([prom1, prom2])
-  .then(([openstories, mystories]) => {
-    res.render('dashboard', {openstories, mystories})
+  const prom3 = Story.find({"open": false})
+  .limit(4)
+  .populate({ 
+    path: 'collaborations',
+    populate: {
+      path: 'user'
+    } 
+  })
+  .populate('users')
+
+  Promise.all([prom1, prom2, prom3])
+  .then(([openstories, mystories, stories]) => {
+    res.render('dashboard', {openstories, mystories, stories})
   })
   .catch(e => console.log(e))
 })
@@ -68,6 +78,23 @@ router.get('/dashboard/openstories', ensureLoggedIn('/login'), (req, res, next) 
     })
     .catch(e => console.log(e))
   })
+
+  router.get('/stories', ensureLoggedIn('/login'), (req, res, next) => {
+    let user = req.user._id;
+    Story.find({"open": false})
+    .populate({ 
+      path: 'collaborations',
+      populate: {
+        path: 'user'
+      } 
+    })
+    .populate('users')
+    .then(stories => {
+      res.render('stories', {stories})
+    })
+    .catch(e => console.log(e))
+  })
+  
 
 
 
