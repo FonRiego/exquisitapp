@@ -55,7 +55,7 @@ router.get('/story/:id', (req,res, next) => {
       
       res.render('stories/continue-story', {story, middle})
     } else { 
-      console.log(story.firstWords) 
+      console.log(story.getfirstWords) 
       res.render('stories/finished-story', story)
     }
   })

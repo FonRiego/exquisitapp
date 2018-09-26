@@ -19,13 +19,18 @@ const storySchema = new Schema({
 
 
 storySchema.methods.getFirstWords = function(cb) {
-  return this.populate("collaborations").collaborations[0].content.split(" ").slice(0,2).join(" ").concat("...")
-  // this.model('Story').find({ type: this.type }, cb);
+  return this.populate("collaborations").execPopulate()
+  .then(e => {
+    return e.collaborations[0].content.split(" ").slice(0,2).join(" ").concat("...")
+  })
 };
 
 storySchema.pre('save', function (next) {
-  this.firstWords = this.getFirstWords();
-  next();
+  this.getFirstWords()
+  .then(e =>{
+    this.firstWords = e;
+    next();
+  })
 })
 
 const Story = mongoose.model('Story', storySchema);
