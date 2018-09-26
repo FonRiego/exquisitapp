@@ -52,8 +52,10 @@ router.get('/story/:id', (req,res, next) => {
       if (story.collaborations.length == 1) {
         middle = true;
       }
+      
       res.render('stories/continue-story', {story, middle})
-    } else {  
+    } else { 
+      console.log(story.firstWords) 
       res.render('stories/finished-story', story)
     }
   })
