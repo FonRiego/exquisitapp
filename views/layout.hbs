@@ -16,10 +16,17 @@
 
   <nav>
     <div class="navbar-logo">
-      <a href="/"><img src="/images/exquisit_logo.png"></a>
+      {{#if isUserLoggedIn}}
+        <a href="/dashboard">
+      {{else}}
+        <a href="/"></a>
+      {{/if}}
+        <img src="/images/exquisit_logo.png">
+      </a>
     </div>
     <div class="menu">
       {{#if isUserLoggedIn}}
+      <a href="/story/new">Nueva historia</a>
       <a href="/auth/logout">Logout</a>
       {{else}}
       <a href="/auth/login">Login</a>

@@ -6,11 +6,11 @@ const Collab = require('../models/Collab')
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
 
-router.get('/story/new', ensureLoggedIn('/login'), (req, res, next) => {
+router.get('/story/new', ensureLoggedIn('/auth/login'), (req, res, next) => {
   res.render("stories/new")
 });
 
-router.post('/story/new', ensureLoggedIn('/login'), (req, res, next) => { 
+router.post('/story/new', ensureLoggedIn('/auth/login'), (req, res, next) => { 
   let content = req.body.content;
   let image_url = req.body.image_url;
   let user = req.user._id;
@@ -52,7 +52,7 @@ router.get('/story/:id', (req,res, next) => {
   })
 })
 
-router.post('/story/:id', ensureLoggedIn('/login'), (req, res, next) => {
+router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
   let id = req.params.id;
   let image_url = req.body.image_url;
   let content = req.body.content;

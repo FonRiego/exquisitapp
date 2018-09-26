@@ -1,14 +1,21 @@
-<div id="giphy-image-randomizer">
-  <img>
-  <button id="get-new-gif">Get another GIF</button>
-</div>
-
-<form action="/story/new" method="POST">
-  <input id="image_url" type="hidden" name="image_url" value="">
-  <label>Introduce el sujeto de la historia para empezar la historia!</label>
-  <input id="content" type="text" name="content">
-  <button>Crea nueva historia</button>
-</form>
-
+<header id="giphy-image-randomizer">
+  <div class="image-box">
+    <div>
+      <img>
+    </div>
+    <button id="get-new-gif">Cambia de GIF</button>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <h2>¡Nueva historia!</h2>
+    <p>¿Quién es el protagonista?</p>
+  <form action="/story/new" method="POST">
+    <input id="image_url" type="hidden" name="image_url" value="">
+    <input id="content" type="text" name="content" autofocus>
+    <button id="collab-button">Crear</button>
+  </form>
+  </div>
+</main>
 
 <script src="/javascripts/getGif.js"></script>
