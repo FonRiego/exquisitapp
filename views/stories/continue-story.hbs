@@ -1,4 +1,4 @@
-<div id="giphy-image-randomizer">
+{{!-- <div id="giphy-image-randomizer">
   <img>
   <button id="get-new-gif">Get another GIF</button>
 </div>
@@ -16,5 +16,37 @@
   {{/if}}
 </form>
 
+
+<script src="/javascripts/getGif.js"></script> --}}
+
+
+
+<header id="giphy-image-randomizer">
+  <div class="image-box">
+    <div>
+      <img>
+    </div>
+    <button id="get-new-gif">Cambia de GIF</button>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <h2>¡Continua la historia!</h2>
+    {{#if middle}}
+      <p>¿Cuál es la acción?</p>
+    {{else}}
+      <p>¿Cuál es la situación?</p>
+    {{/if}}
+  <form action="/story/{{story._id}}" method="POST">
+    <input id="image_url" type="hidden" name="image_url" value="">
+    <input id="content" type="text" name="content" autofocus>
+    {{#if middle}}
+      <button id="collab-button">Añadir</button>
+    {{else}}
+      <button id="collab-button">Acaba la historia</button>
+    {{/if}}
+  </form>
+  </div>
+</main>
 
 <script src="/javascripts/getGif.js"></script>

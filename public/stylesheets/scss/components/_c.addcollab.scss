@@ -1,0 +1,53 @@
+#giphy-image-randomizer {
+  width: 100%;
+  height: 50vh;
+  background-color: $dark-grey;
+  display: flex;
+  .image-box {
+    @extend .container;
+    justify-content: space-between;
+    padding: 30px 30px;
+    div {
+      width: 100%;
+      flex: 0 0 auto;
+      padding: 40px 0px;
+      height: 84%;
+      box-sizing: border-box;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        overflow: hidden;
+      }
+    }
+    button {
+      @extend .buttonpersonal;
+      color: white;
+      border: 2px white solid;
+      background-color: $dark-grey;
+    }
+  }
+}
+
+input#content {
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  &:focus {
+    outline-width: 0;
+  }
+}
+
+#collab-button {
+  @extend .buttonpersonal;
+  color: $dark-grey;
+  border: 2px $dark-grey solid;
+  background-color: white;
+  margin-top: 20px;
+}
