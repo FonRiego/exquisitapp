@@ -23,7 +23,7 @@ router.post('/story/new', ensureLoggedIn('/login'), (req, res, next) => {
     })
   })
   .then( story => {
-    res.redirect("/");
+    res.redirect("/dashboard");
   })
   .catch(e => next(e))
 });
