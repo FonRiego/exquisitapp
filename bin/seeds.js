@@ -20,6 +20,8 @@ mongoose
 
 let users = [
   {
+    avatarName: "Perfil_Linkedin.jpeg",
+    avatarPath: "http://res.cloudinary.com/dfnhl6wc1/image/upload/v1537992287/Profile-photos/1537992286082.jpg",
     username: "alicia",
     password: bcrypt.hashSync("alicia", bcrypt.genSaltSync(bcryptSalt)),
     _id: "57e5a5e00000000000000000"
@@ -38,6 +40,13 @@ let users = [
     username: "jaime",
     password: bcrypt.hashSync("jaime", bcrypt.genSaltSync(bcryptSalt)),
     _id: "5240b9e00000000000000000"
+  },
+  {
+    avatarName: "Perfil_Linkedin.jpeg",
+    avatarPath: "http://res.cloudinary.com/dfnhl6wc1/image/upload/v1537992287/Profile-photos/1537992286082.jpg",
+    username: "fon",
+    password: bcrypt.hashSync("fon", bcrypt.genSaltSync(bcryptSalt)),
+    _id: "5babe660ee1cd404b38f1b75"
   }
 ];
 
