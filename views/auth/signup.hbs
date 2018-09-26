@@ -1,35 +1,20 @@
-<h2>Signup</h2>
+<main class="animated-background">
+  <div class="connect-box">
+    <h2>Regístrate</h2>
+    <form action="/auth/signup" method="POST" id="form-container" enctype="multipart/form-data">
+      <input id="username" type="text" name="username" placeholder="Nombre de usuario">
+      <input id="password" type="password" name="password" placeholder="Contraseña">
+      <input type="file" name="photo" id="photo" class="inputfile">
+      <label for="photo" class="filebutton">Añade tu foto de perfil</label>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <button class="signup">Crear cuenta</button>
+    </form>
 
-<form action="/auth/signup" method="POST" id="form-container" enctype="multipart/form-data">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
+      <div class="account-message">
+        <p>¿Ya estás registrado? <a href="/auth/login">Inicia sesión</a></p>
+      </div>
+  </div>
+</main>
 
-  <br><br>
-
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-
-  <br><br>
-
-
-  <label for="photo">Upload your Profile photo</label>
-  {{!-- <input type="text" name="name"> --}}
-  <input type="file" name="photo">
-  
-  
-
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br><br>
-
-  <button>
-    <input type="submit" value="Create Account">
-  </button>
-
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/auth/login">Login</a>
-  </p>
-</form>

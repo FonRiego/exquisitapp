@@ -68,7 +68,7 @@ router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
         res.redirect(`/story/${id}`)
       })
     } else {
-      res.redirect('/')
+      res.redirect('/dashboard')
     }
   })
 })

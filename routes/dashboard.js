@@ -5,7 +5,7 @@ const User = require('../models/User')
 const Collab = require('../models/Collab')
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
-router.get('/dashboard', ensureLoggedIn('/login'), (req, res, next) => {
+router.get('/dashboard', ensureLoggedIn('/auth/login'), (req, res, next) => {
   let user = req.user._id;
   console.log(user)
 
@@ -47,7 +47,7 @@ router.get('/dashboard', ensureLoggedIn('/login'), (req, res, next) => {
 })
 
 
-router.get('/dashboard/openstories', ensureLoggedIn('/login'), (req, res, next) => {
+router.get('/dashboard/openstories', ensureLoggedIn('/auth/login'), (req, res, next) => {
     let user = req.user._id;
     Story.find({"open": true, "users": {$ne: user._id}})
     .populate({ 
@@ -63,7 +63,7 @@ router.get('/dashboard/openstories', ensureLoggedIn('/login'), (req, res, next) 
     .catch(e => console.log(e))
   })
 
-  router.get('/dashboard/mystories', ensureLoggedIn('/login'), (req, res, next) => {
+  router.get('/dashboard/mystories', ensureLoggedIn('/auth/login'), (req, res, next) => {
     let user = req.user._id;
     Story.find({"open": false, "users": {$in: user._id}})
     .populate({ 
@@ -79,7 +79,7 @@ router.get('/dashboard/openstories', ensureLoggedIn('/login'), (req, res, next) 
     .catch(e => console.log(e))
   })
 
-  router.get('/stories', ensureLoggedIn('/login'), (req, res, next) => {
+  router.get('/stories', ensureLoggedIn('/auth/login'), (req, res, next) => {
     let user = req.user._id;
     Story.find({"open": false})
     .populate({ 
