@@ -53,6 +53,15 @@
       }
     }
   }
+  .card-button a{
+    display: block;
+    padding: 20px 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: $dark-grey;
+    box-sizing: border-box;
+    border: 2px solid $dark-grey;
+  }
 
 }
 
