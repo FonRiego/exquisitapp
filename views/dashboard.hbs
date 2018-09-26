@@ -5,10 +5,20 @@
   <div class="container">
     <h2>Continuar historia</h2>
     <div class="card-deck">
-    {{#each stories}}
+    {{#each openstories}}
       {{> storyCard}}
     {{/each}}
     </div>
   <a href="/dashboard/openstories"><h2>Ver más historias para continuar...</h2></a>
+  </div>
+
+  <div class="container">
+    <h2>Mis historias</h2>
+    <div class="card-deck">
+    {{#each mystories}}
+      {{> storyCard}}
+    {{/each}}
+    </div>
+  //<a href="/dashboard/mystories"><h2>Ver más historias en las que has participado</h2></a>
   </div>
 </main>
