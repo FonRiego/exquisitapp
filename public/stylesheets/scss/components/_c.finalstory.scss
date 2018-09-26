@@ -1,0 +1,21 @@
+.finished-story-header{
+  background-color: $dark-grey;
+  padding: 30px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  h2{
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .finished-story-images{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .final-gif{
+      flex: 0 1 300px;
+
+    }
+  }
+}

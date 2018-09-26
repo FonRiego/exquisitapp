@@ -591,6 +591,23 @@ input#content {
   background-color: white;
   margin-top: 20px; }
 
+.finished-story-header {
+  background-color: #333333;
+  padding: 30px 20px;
+  width: 100%;
+  box-sizing: border-box; }
+  .finished-story-header h2 {
+    color: white;
+    text-align: center;
+    padding-bottom: 20px; }
+  .finished-story-header .finished-story-images {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
+    .finished-story-header .finished-story-images .final-gif {
+      flex: 0 1 300px; }
+
 .t-right {
   text-align: right; }
 

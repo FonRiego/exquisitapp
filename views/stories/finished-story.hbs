@@ -1,23 +1,30 @@
-
-<div id="giphy-image">
-  <h2>THE SITUATION:</h2>
-  {{#each collaborations}}
-  <img src="{{image_url}}">
-  {{/each}}
-</div>
-<div>
-  <h2>THE STORY:</h2>
-  <p>
+<header class="finished-story-header">
+  <h2>La historia</h2>
+  <div class="finished-story-images">
     {{#each collaborations}}
-    {{content}}
+    <div class="final-gif">
+      <img src="{{image_url}}">
+    </div>
     {{/each}}
-  </p>
-</div>
-<div>
-  <h3>THE AUTHORS:</h3>
-  <p>
-    {{#each collaborations}}
-    {{user.username}}
-    {{/each}}
-  </p>
-</div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div>
+      <h2>THE STORY:</h2>
+      <p>
+        {{#each collaborations}}
+        {{content}}
+        {{/each}}
+      </p>
+    </div>
+    <div>
+      <h3>THE AUTHORS:</h3>
+      <p>
+        {{#each collaborations}}
+        {{user.username}}
+        {{/each}}
+      </p>
+    </div>
+  </div>
+</main>
