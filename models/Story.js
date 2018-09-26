@@ -5,6 +5,7 @@ const Collab = require('../models/Collab')
 
 const storySchema = new Schema({
   collaborations: [{type: Schema.Types.ObjectId, ref: "Collab"}],
+  users: [{type: Schema.Types.ObjectId, ref: "User"}],
   open: {
     type: Boolean,
     default: true

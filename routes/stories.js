@@ -5,16 +5,6 @@ const User = require('../models/User')
 const Collab = require('../models/Collab')
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
-// router.get('/stories/new', (req, res, next) => {
-//   Story.find({"open": true})
-//   .populate('collaborations')
-//   .then(stories => {
-//     res.render('stories', {stories})
-//   })
-// })
-
-
-//nueva colaboración!!!!
 
 router.get('/story/new', ensureLoggedIn('/login'), (req, res, next) => {
   res.render("stories/new")
@@ -28,6 +18,7 @@ router.post('/story/new', ensureLoggedIn('/login'), (req, res, next) => {
   .then( collab => {
     return Story.create({
       collaborations: [collab._id],
+      users: [user._id],
       image_url
     })
   })
@@ -68,7 +59,7 @@ router.post('/story/:id', ensureLoggedIn('/login'), (req, res, next) => {
   let user = req.user._id;
   Collab.create({content, user, image_url})
   .then( collab => {
-    return Story.findByIdAndUpdate(id, { $push: { collaborations: collab._id } }, {new: true})
+    return Story.findByIdAndUpdate(id, { $push: { collaborations: collab._id, users: user._id}}, {new: true})
   })
   .then( story => {
     if (story.collaborations.length == 3){
@@ -82,18 +73,5 @@ router.post('/story/:id', ensureLoggedIn('/login'), (req, res, next) => {
   })
 })
 
-// //nueva story!!!!
-
-// router.post('/new', (req, res, next) => {
-//   let {content, userId} = req.body;
-
-//   Collab.create({content}).populate('user' = userId)
-//   .then( (collab) => {
-//     Story.create({})
-//     .then ( ()   => {
-//       res.render('');
-//     })
-//   .catch(e => next(e))
-// });
 
 module.exports = router;

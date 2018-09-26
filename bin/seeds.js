@@ -1,5 +1,3 @@
-// Seeds file that remove all users and create 2 new users
-
 // To execute this seed, run from the root of the project
 // $ node bin/seeds.js
 
@@ -91,18 +89,18 @@ let collabs = [
 
 let stories = [
   {
-   
     collaborations: ["505f86600000000000000000", "4e7d01600000000000000000", "4c9bcde00000000000000000"],
+    users: ["57e5a5e00000000000000000", "560320e00000000000000000", "5421ed600000000000000000"],
     open: false
   },
   {
-    
     collaborations: ["4aba9a600000000000000000", "48d966e00000000000000000","46f6e1e00000000000000000"],
+    usera: ["5240b9e00000000000000000", "57e5a5e00000000000000000", "560320e00000000000000000"],
     open: false
   },
   {
-    
     collaborations: ["4515ae600000000000000000"],
+    users: ["5421ed600000000000000000"],
     open: true
   }
 ];
