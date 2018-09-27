@@ -1,16 +1,70 @@
-
 .index-header {
   width: 100%;
   background-color: $dark-grey;
+  padding: 50px 0px;
   display: flex;
   .index-hero-container {
     @extend .container;
     display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    .index-hero-gifs {
+      width: 50%;
+      height: 400px;
+      position: relative;
+      @media (max-width: 1050px) {
+        width: 1px;
+        margin: 0 auto;
+        height: 440px;
+      }
+      .hero-gif {
+        position: absolute;
+        img {
+          box-shadow: #33333333 10px 10px 13px 1px;
+        }
+        &.num1 {
+          left: 40px;
+          width: 250px;
+          @media (max-width: 1050px) {
+            left: -230px;
+            margin: 0 auto;
+          }
+        }
+        &.num2 {
+          top: 60px;
+          left: 260px;
+          width: 230px;
+          @media (max-width: 1050px) {
+            left: 10px;
+          }
+        }
+        &.num3 {
+          top: 170px;
+          width: 310px;
+          @media (max-width: 1050px) {
+            left: -260px;
+          }
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
     .index-hero-cta {
       text-align: left;
-      color:white;
-      h1{
-        font-size:45px;
+      color: white;
+      width: 50%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      @media (max-width: 1050px) {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        font-size: 45px;
       }
       p {
         font-size: 20px;

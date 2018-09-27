@@ -42,6 +42,14 @@ footer {
   color: white;
   background-color: $dark-grey;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  img {
+    display: block;
+  }
+  p {
+    margin: 0;
+  }
 }
 
 
