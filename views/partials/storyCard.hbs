@@ -1,19 +1,16 @@
-<article class="story-card">
-  <div class="card-hero-header">
-    <h3>"{{this.firstWords}}"</h3>
-  </div>
-  <div class="card-bottom">
-    <div class="card-thumbnail">
-      <img src="{{this.collaborations.0.user.avatarPath}}">
+<a href="/story/{{this._id}}">
+  <article class="story-card">
+    <div class="card-hero-header">
+      <h3>"{{this.firstWords}}"</h3>
     </div>
-    <div class="card-author">
-      <p class="muted-pre-title">Creado por</p>
-      <p class="author-username">{{this.collaborations.0.user.username}}</p>
+    <div class="card-bottom">
+      <div class="card-thumbnail">
+        <img src="{{this.collaborations.0.user.avatarPath}}">
+      </div>
+      <div class="card-author">
+        <p class="muted-pre-title">Creado por</p>
+        <p class="author-username">{{this.collaborations.0.user.username}}</p>
+      </div>
     </div>
-  </div>
-  <div class="card-button">
-    <a href="/story/{{this._id}}">Ver historia</a>
-  </div>
-</article>
-
-
+  </article>
+</a>

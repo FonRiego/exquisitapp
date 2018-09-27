@@ -5,12 +5,12 @@
   justify-content: flex-start;
 }
 
-.story-card{
+.story-card {
   width: 270px;
   margin-right: 20px;
   margin-bottom: 40px;
-  &:last-child{
-  margin-right: 0;
+  &:last-child {
+    margin-right: 0;
   }
   .card-hero-header {
     width: 100%;
@@ -49,7 +49,7 @@
       p {
         margin: 0;
       }
-      .muted-pre-title{
+      .muted-pre-title {
         color: $light-grey;
         font-size: 13px;
       }
@@ -59,15 +59,4 @@
       }
     }
   }
-  .card-button a{
-    display: block;
-    padding: 20px 10px;
-    border-radius: 5px;
-    margin-top: 15px;
-    color: $dark-grey;
-    box-sizing: border-box;
-    border: 2px solid $dark-grey;
-  }
-
 }
-

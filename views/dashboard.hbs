@@ -4,9 +4,9 @@
 <main>
   <section class="dashstories continue">
     <a href="/dashboard/openstories">
-      <div>
-        <h2>Exquisits abiertos</h2>
-        <p>Añade tu granito de arena en los memes del futuro 😎</p>
+      <div class="title-header-section">
+        <h2>😎 Exquisits abiertos</h2>
+        <p>Añade tu granito de arena a los memes del futuro</p>
       </div>
     </a>
     <div class="card-deck dash">
@@ -14,30 +14,44 @@
       {{> storyCard}}
       {{/each}}
     </div>
+    <div class="card-button">
+      <a href="/dashboard/openstories">Ver historia</a>
+    </div>
   </section>
 
   <section class="dashstories">
-    <h2>Mis últimos exquisits</h2>
+    <a href="/dashboard/mystories">
+      <div class="title-header-section">
+        <h2>
+          <img src="https://images-na.ssl-images-amazon.com/images/I/51n91sx4oHL._SY355_.jpg" width="40px"> Mis últimos exquisits</h2>
+        <p>Tu repositorio personal de internet trash</p>
+      </div>
+    </a>
     <div class="card-deck dash">
       {{#each mystories}}
       {{> storyCard}}
       {{/each}}
     </div>
-    <a href="/dashboard/mystories">
-      <h4>Todos mis exquisits</h4>
-    </a>
+    <div class="card-button">
+      <a href="/dashboard/mystories">Todos mis exquisits</a>
+    </div>
   </section>
 
   <section class="dashstories">
-    <h2>Explorar Exquisits</h2>
+    <a href="/stories">
+      <div class="title-header-section">
+        <h2><img src="https://i0.wp.com/frenky.id/wp-content/uploads/2018/02/cropped-doge-icon-2.png" alt="" width="40px"> Explorar exquisits</h2>
+        <p>Wow. Much hilarious. So laughter. Very lol.</p>
+      </div>
+    </a>
     <div class="card-deck dash">
       {{#each stories}}
       {{> storyCard}}
       {{/each}}
     </div>
-    <a href="/stories">
-      <h4>Ver todos</h4>
-    </a>
+    <div class="card-button">
+      <a href="/stories">Entra en el abismo</a>
+    </div>
   </section>
 
 </main>

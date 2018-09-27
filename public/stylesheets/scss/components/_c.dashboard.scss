@@ -1,25 +1,38 @@
-.dashstories{
+.dashstories {
   @extend .container;
-  text-align: left;
-  h2 {
-    @extend .dash-section-header;
-  }
-  .card-deck.dash{
-    padding: 25px 0;
-  }
-  a {
+  .title-header-section {
     color: $dark-grey;
-    div:hover{
+    text-align: left;
+    h2 {
+      padding-bottom: 15px;
+      border-bottom: 2px solid $dark-grey;
+      &:hover {
+        color: $accent-color;
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+    &:hover {
       color: $accent-color;
     }
   }
-}
 
+  .card-deck.dash {
+    padding: 25px 0;
+  }
 
-.dash-section-header{
-  padding-bottom: 15px;
-  border-bottom: 2px solid $dark-grey;
-  &:hover{
-    border-bottom: 2px solid $accent-color;
+  .card-button a {
+    display: block;
+    padding: 20px 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: $dark-grey;
+    box-sizing: border-box;
+    border: 2px solid $dark-grey;
+    max-width: 280px;
+    margin: 0 auto;
+    &:hover {
+      color: $accent-color;
+      border: 2px solid $accent-color;
+    }
   }
 }
