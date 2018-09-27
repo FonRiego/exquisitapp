@@ -1,14 +1,21 @@
-
-<header>
-<h2>Elige una historia para verla</h2>
-</header>
 <main>
+  <div class="animated-background dash"></div>
   <div class="container">
+    <h2 class="page-title">Explorador de exquisits</h2>
     <div class="card-deck">
-    {{#each stories}}
+      {{#each stories}}
       {{> storyCard}}
-    {{/each}}
+      {{/each}}
     </div>
   </div>
-  <a href="/dashboard">Volver a tu Dashboard</a>
+  {{#if isUserLoggedIn}}
+  <div class="card-button">
+    <a href="/dashboard">Vuelve a tu dashboard</a>
+  </div>
+  {{else}}
+  <div class="card-button">
+    <a href="/auth/signup">Regístrate y crea exquisits</a>
+  </div>
+  {{/if}}
+  <div class="animated-background dash"></div>
 </main>
