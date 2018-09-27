@@ -1,10 +1,14 @@
 
-{{#each stories}}
-<img src="{{this.image_url}}" alt="">
-<p>
-  {{#each this.collaborations}}
-  {{this.content}}
-  {{/each}}
-</p>
-{{/each}}
-
+<header>
+<h2>Elige una historia para verla</h2>
+</header>
+<main>
+  <div class="container">
+    <div class="card-deck">
+    {{#each stories}}
+      {{> storyCard}}
+    {{/each}}
+    </div>
+  </div>
+  <a href="/dashboard">Volver a tu Dashboard</a>
+</main>
