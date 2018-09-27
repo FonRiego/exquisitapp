@@ -29,13 +29,22 @@ router.get("/signup", (req, res, next) => {
 router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
-  const imgName = req.file.originalname;
-  const imgPath = req.file.url;
+  let imgName = "";
+  let imgPath = "";
 
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
   }
+
+  if (!req.file) {
+    imgName = "user_placeholder.png";
+    imgPath = "/images/user_placeholder.png"
+  } else {
+    imgName = req.file.originalName;
+    imgPath = req.file.url;
+  }
+
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
