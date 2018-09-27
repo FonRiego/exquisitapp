@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+require('dotenv').load()
 const http = require('http');
 
 let app = require('../app');

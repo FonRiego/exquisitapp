@@ -17,7 +17,7 @@ const User = require("./models/User");
     
 
 mongoose
-  .connect('mongodb://localhost/exquisitapp', {useNewUrlParser: true})
+  .connect(process.env.MONGO_URL, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

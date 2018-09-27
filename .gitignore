@@ -6,3 +6,9 @@ npm-debug.log
 
 # Environment Variables should NEVER be published
 .env
+
+
+# Sass
+
+public/stylesheets/style.css
+public/stylesheets/style.css.map
