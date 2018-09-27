@@ -2,12 +2,13 @@
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .story-card{
   width: 270px;
   margin-right: 20px;
+  margin-bottom: 40px;
   &:last-child{
   margin-right: 0;
   }

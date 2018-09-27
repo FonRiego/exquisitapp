@@ -2,34 +2,34 @@
 
 </header>
 <main>
-  <div class="container">
-    <h2>Continuar historia</h2>
-    <div class="card-deck">
+  <section class="dashstories continue">
+    <h2>Exquisits abiertos</h2>
+    <div class="card-deck dash">
     {{#each openstories}}
       {{> storyCard}}
     {{/each}}
     </div>
-    <a href="/dashboard/openstories"><h2>Ver más historias para continuar...</h2></a>
-  </div>
+    <a href="/dashboard/openstories"><h4>Más exquisits abiertos</h4></a>
+  </section>
 
-  <div class="container">
-    <h2>Mis historias</h2>
-    <div class="card-deck">
+  <section class="dashstories">
+    <h2>Mis últimos exquisits</h2>
+    <div class="card-deck dash">
     {{#each mystories}}
       {{> storyCard}}
     {{/each}}
     </div>
-    <a href="/dashboard/mystories"><h2>Ver más historias en las que has participado</h2></a>
-  </div>
+    <a href="/dashboard/mystories"><h4>Todos mis exquisits</h4></a>
+  </section>
 
-  <div class="container">
-    <h2>Explorar historias</h2>
-    <div class="card-deck">
+  <section class="dashstories">
+    <h2>Explorar Exquisits</h2>
+    <div class="card-deck dash">
     {{#each stories}}
       {{> storyCard}}
     {{/each}}
     </div>
-    <a href="/stories"><h2>Ver más historias terminadas</h2></a>
-  </div>
+    <a href="/stories"><h4>Ver todos</h4></a>
+  </section>
 
 </main>

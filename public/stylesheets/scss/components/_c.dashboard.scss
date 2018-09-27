@@ -1,0 +1,16 @@
+.dashstories{
+  @extend .container;
+  h2 {
+    @extend .dash-section-header;
+  }
+  .card-deck.dash{
+    padding: 25px 0;
+  }
+}
+
+
+.dash-section-header{
+  text-align: left;
+  padding-bottom: 15px;
+    border-bottom: 2px solid $dark-grey;
+}
