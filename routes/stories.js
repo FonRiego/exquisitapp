@@ -31,26 +31,33 @@ router.post('/story/new', ensureLoggedIn('/auth/login'), (req, res, next) => {
 
 router.get('/story/:id', (req,res, next) => {
   let id = req.params.id
-  Story.findById(id)
+
+  const prom1= Story.findById(id)
   .populate({ 
     path: 'collaborations',
     populate: {
       path: 'user'
     } 
- })
-  .then( story => {
+  })
+
+  const prom2 = Comment.find({story: id})
+  .populate("story")
+  .populate("user")
+
+  Promise.all([prom1, prom2])
+  .then(([story, comments]) => {
     if (story.open){
       let middle = false;
       if (story.collaborations.length == 1) {
         middle = true;
       }
-      
       res.render('stories/continue-story', {story, middle})
     } else { 
-      console.log(story.getfirstWords) 
-      res.render('stories/finished-story', story)
+      console.log(story)
+      res.render('stories/finished-story', {story, comments})
     }
   })
+  .catch(e => console.log(e))
 })
 
 router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {

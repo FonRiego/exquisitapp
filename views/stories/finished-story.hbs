@@ -1,7 +1,7 @@
 <header class="finished-story-header">
   <h2>La historia</h2>
   <div class="finished-story-images">
-    {{#each collaborations}}
+    {{#each story.collaborations}}
     <div class="final-gif">
       <img src="{{image_url}}">
     </div>
@@ -13,7 +13,7 @@
     <div>
       <h2>THE STORY:</h2>
       <p>
-        {{#each collaborations}}
+        {{#each story.collaborations}}
         {{content}}
         {{/each}}
       </p>
@@ -21,7 +21,7 @@
     <div>
       <h3>THE AUTHORS:</h3>
       <p>
-        {{#each collaborations}}
+        {{#each story.collaborations}}
         {{user.username}}
         {{/each}}
       </p>
@@ -36,7 +36,7 @@
     </form>
     <div>
       {{#each comments}}
-        {{this.content}}
+        {{content}}
       {{/each}}
     </div>
   </div>
