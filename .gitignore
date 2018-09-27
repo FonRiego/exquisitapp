@@ -14,3 +14,5 @@ public/stylesheets/style.css
 public/stylesheets/style.css.map
 /.sass-cache/
 /.vscode/
+
+.DS_Store
