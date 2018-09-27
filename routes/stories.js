@@ -30,6 +30,10 @@ router.post('/story/new', ensureLoggedIn('/auth/login'), (req, res, next) => {
 });
 
 router.get('/story/:id', (req,res, next) => {
+  let message = "";
+  if (req.query.valid) {
+    message = req.query.valid
+  }
   let id = req.params.id
 
   const prom1= Story.findById(id)
@@ -54,12 +58,28 @@ router.get('/story/:id', (req,res, next) => {
       res.render('stories/continue-story', {story, middle})
     } else { 
       console.log(story)
-      res.render('stories/finished-story', {story, comments})
+      res.render('stories/finished-story', {story, comments, message})
     }
   })
   .catch(e => console.log(e))
 })
 
+router.post('/story/:id/newcomment', ensureLoggedIn('/auth/login'), (req, res, next) => {
+  let content = req.body.content;
+  let user = req.user._id;
+  let story = req.params.id;
+  if (content === "") {
+    let message=encodeURIComponent('El comentario no puede estar vacío')
+    res.redirect(`/story/${story}/?valid=` + message)
+  }
+  Comment.create({content, user, story})
+  .then( comment =>{
+    console.log(comment)
+    res.redirect(`/story/${comment.story}`)
+  })
+  .catch(e => console.log(e))
+  
+})
 
 router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
   let id = req.params.id;
@@ -82,17 +102,5 @@ router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
   })
 })
 
-router.post('/story/:id/newcomment', ensureLoggedIn('/auth/login'), (req, res, next) => {
-  let content = req.body.content;
-  let user = req.user._id;
-  let story = req.params.id;
-  console.log(content + user + story)
-  Comment.create({content, user, story})
-  .then( comment =>{
-    console.log(comment)
-    res.redirect(`/story/${comment.story}`)
-  })
-  .catch(e => console.log(e))
-})
 
 module.exports = router;
