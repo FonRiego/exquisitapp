@@ -19,3 +19,17 @@
 //   })
 //   .catch(err => console.log(err))
 // }
+
+
+$(document).ready(()=>{
+  $(".comment").each(function(){
+    if ($(this).find(".comment-user h6").html().split(" ")[0] == thisUserName){
+      let storyId = window.location.href.split("/").pop()
+      let comment = $(this).attr('id')
+      let parte1 = '<div class="delete-comment"><a href="/story/'
+      let parte2 = '/deletecomment/'
+      let parte3 = '">Borrar</a></div>'
+      $(this).append(parte1+storyId+parte2+comment+parte3)
+    }
+  })
+})

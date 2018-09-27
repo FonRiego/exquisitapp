@@ -68,7 +68,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 app.locals.title = 'Exquisit.app – Creador de memes colaborativos';
 
 
-// Enable authentication using session + passport
+// Enable authentication using session + passport 
 app.use(session({
   secret: 'irongenerator',
   resave: true,
@@ -85,6 +85,9 @@ app.use((req, res, next) => {
     .then( user =>{
       res.locals.currentUserInfo = user;
       res.locals.isUserLoggedIn = true;
+      res.locals.thisUserId = JSON.stringify(user._id);
+      res.locals.thisUserName = JSON.stringify(user.username);
+      console.log(res.locals.thisUserId);
     })
     .then( () => next())
   } else {
