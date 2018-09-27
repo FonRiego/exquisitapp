@@ -15,7 +15,7 @@
     {{else}}
       <p>¿Cuál es la situación?</p>
     {{/if}}
-  <form action="/story/{{story._id}}" method="POST">
+  <form action="/story/{{this._id}}" method="POST">
     <input id="image_url" type="hidden" name="image_url" value="">
     <input id="content" type="text" name="content" autofocus>
     {{#if middle}}

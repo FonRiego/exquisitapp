@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
-const Collab = require('../models/Collab')
 
 const userSchema = new Schema({
   username: String,

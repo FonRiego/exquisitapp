@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
-const User = require('../models/User')
-const Collab = require('../models/Collab')
 
 const storySchema = new Schema({
   collaborations: [{type: Schema.Types.ObjectId, ref: "Collab"}],

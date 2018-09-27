@@ -3,6 +3,7 @@ const router  = express.Router();
 const Story = require('../models/Story')
 const User = require('../models/User')
 const Collab = require('../models/Collab')
+const Comment = require('../models/Comment')
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
 
@@ -71,6 +72,19 @@ router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
       res.redirect('/dashboard')
     }
   })
+})
+
+router.post('/story/:id/newcomment', ensureLoggedIn('/auth/login'), (req, res, next) => {
+  let content = req.body.content;
+  let user = req.user._id;
+  let story = req.params.id;
+  console.log(content + user + story)
+  Comment.create({content, user, story})
+  .then( comment =>{
+    console.log(comment)
+    res.redirect(`/story/${comment.story}`)
+  })
+  .catch(e => console.log(e))
 })
 
 
