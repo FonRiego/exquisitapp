@@ -7,7 +7,6 @@ const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
 router.get('/dashboard', ensureLoggedIn('/auth/login'), (req, res, next) => {
   let user = req.user._id;
-  console.log(user)
 
   const prom1 = Story.find({"open": true, "users": {$ne: user._id}})
   .limit(4)
