@@ -71,14 +71,14 @@ router.post('/story/:id/newcomment', ensureLoggedIn('/auth/login'), (req, res, n
   if (content === "") {
     let message=encodeURIComponent('El comentario no puede estar vacío')
     res.redirect(`/story/${story}/?valid=` + message)
-  }
+  } else {
   Comment.create({content, user, story})
   .then( comment =>{
     console.log(comment)
     res.redirect(`/story/${comment.story}`)
   })
   .catch(e => console.log(e))
-  
+}
 })
 
 router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
