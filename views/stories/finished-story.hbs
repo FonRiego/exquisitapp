@@ -27,16 +27,17 @@
       </p>
     </div>
   </div>
-  <div>
-    <h3>Añade un comentario</h3>
-    <form action="/story/{{this._id}}/newcomment" method="POST">
-  
-      <input id="comment-content" type="text" name="content" placeholder="Tu comentario...">
-      <button class="addcomment">Enviar</button>
-    </form>
-    <div>
+  <div class="container">
+    <div class="comment-creation">
+      <h3>Añade un comentario</h3>
+      <form action="/story/{{this._id}}/newcomment" method="POST">
+        <input id="comment-content" type="text" name="content" placeholder="Tu comentario...">
+        <button class="addcomment">Enviar</button>
+      </form>
+    </div>
+    <div class="comments-container">
       {{#each comments}}
-        {{content}}
+        {{> comment}}
       {{/each}}
     </div>
   </div>
