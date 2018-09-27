@@ -1,13 +1,15 @@
-<header>
-<h2>Elige qué historia continuar</h2>
-</header>
 <main>
+  <div class="animated-background dash"></div>
   <div class="container">
+  <h2 class="page-title">Exquisits abiertos</h2>
     <div class="card-deck">
-    {{#each stories}}
+      {{#each stories}}
       {{> storyCard}}
-    {{/each}}
+      {{/each}}
     </div>
   </div>
-  <a href="/dashboard">Volver a tu Dashboard</a>
+   <div class="card-button">
+      <a href="/dashboard">Vuelve a tu dashboard</a>
+    </div>
+  <div class="animated-background dash"></div>
 </main>

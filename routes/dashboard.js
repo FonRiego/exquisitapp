@@ -78,8 +78,8 @@ router.get('/dashboard/openstories', ensureLoggedIn('/auth/login'), (req, res, n
     .catch(e => console.log(e))
   })
 
-  router.get('/stories', ensureLoggedIn('/auth/login'), (req, res, next) => {
-    let user = req.user._id;
+  router.get('/stories', (req, res, next) => {
+    // let user = req.user._id;
     Story.find({"open": false})
     .populate({ 
       path: 'collaborations',

@@ -1,6 +1,6 @@
-<header>
+{{!-- <header>
 
-</header>
+</header> --}}
 <main>
 
   <div class="animated-background dash"></div>
@@ -12,6 +12,7 @@
         <p>Añade tu granito de arena a los memes del futuro</p>
       </div>
     </a>
+    {{#if openstories}}
     <div class="card-deck dash">
       {{#each openstories}}
       {{> storyCard}}
@@ -20,6 +21,10 @@
     <div class="card-button">
       <a href="/dashboard/openstories">Más exquisits abiertos</a>
     </div>
+    {{else}}
+    <div class="empty-deck continue"></div>
+    <p class="empty-message">Vaya, parece que no hay exquisits por completar...</p>
+    {{/if}}
   </section>
 
   <div class="animated-background dash"></div>
@@ -33,6 +38,7 @@
         <p>Tu repositorio personal de internet trash</p>
       </div>
     </a>
+    {{#if mystories}}
     <div class="card-deck dash">
       {{#each mystories}}
       {{> storyCard}}
@@ -41,6 +47,10 @@
     <div class="card-button">
       <a href="/dashboard/mystories">Todos mis exquisits</a>
     </div>
+    {{else}}
+    <div class="empty-deck mystories"></div>
+    <p class="empty-message">Si aún no creaste ni un triste exquisit, ¿qué esperabas?</p>
+    {{/if}}
   </section>
 
   <div class="animated-background dash"></div>
@@ -63,6 +73,6 @@
     </div>
   </section>
 
- <div class="animated-background dash"></div>
- 
+  <div class="animated-background dash"></div>
+
 </main>
