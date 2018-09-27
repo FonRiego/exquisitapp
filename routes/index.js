@@ -9,12 +9,4 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-router.get('/stories', (req, res, next) => {
-  Story.find({"open": false})
-  .populate('collaborations')
-  .then(stories => {
-    res.render('stories', {stories})
-  })
-})
-
 module.exports = router;
