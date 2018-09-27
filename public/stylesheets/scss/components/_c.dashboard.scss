@@ -4,12 +4,12 @@
     color: $dark-grey;
     text-align: left;
     h2 {
-      padding-bottom: 15px;
-      border-bottom: 2px solid $dark-grey;
-      &:hover {
-        color: $accent-color;
-        border-bottom: 2px solid $accent-color;
-      }
+      // padding-bottom: 15px;
+      // border-bottom: 2px solid $dark-grey;
+      //   border-bottom: 2px solid $accent-color;
+        &:hover {
+          color: $accent-color;
+        }
     }
     &:hover {
       color: $accent-color;
