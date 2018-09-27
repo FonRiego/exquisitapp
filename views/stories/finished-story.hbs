@@ -30,12 +30,14 @@
   <div class="container">
     <div class="comment-creation">
       <h3>Añade un comentario</h3>
-      <form action="/story/{{story._id}}/newcomment" method="POST">
+      <form id="comment-form">
         <input id="comment-content" type="text" name="content" placeholder="Tu comentario...">
+        <input hidden type="text" id="storyId" value="">
+        <input hidden type="text" id="userId" value="">
         {{#if message }}
           <div class="error-message">{{ message }}</div>
         {{/if}}
-        <button class="addcomment">Enviar</button>
+        <button id="addcomment">Enviar</button>
       </form>
     </div>
     <div class="comments-container">
