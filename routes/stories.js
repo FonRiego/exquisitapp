@@ -60,6 +60,7 @@ router.get('/story/:id', (req,res, next) => {
   .catch(e => console.log(e))
 })
 
+
 router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
   let id = req.params.id;
   let image_url = req.body.image_url;
@@ -93,6 +94,5 @@ router.post('/story/:id/newcomment', ensureLoggedIn('/auth/login'), (req, res, n
   })
   .catch(e => console.log(e))
 })
-
 
 module.exports = router;
