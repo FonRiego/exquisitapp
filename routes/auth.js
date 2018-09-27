@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require("../models/User");
 const multer = require("multer");
 const uploadCloud = require("../config/cloudinary.js");
+const facebook = require('passport-facebook').Strategy;
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -76,6 +77,12 @@ router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
       });
   });
 });
+
+router.get("/facebook", passport.authenticate("facebook"));
+
+router.get("/facebook/callback", passport.authenticate("facebook", { 
+  successRedirect: '/dashboard',
+  failureRedirect: '/login' }));
 
 router.get("/logout", (req, res) => {
   req.session.destroy();
