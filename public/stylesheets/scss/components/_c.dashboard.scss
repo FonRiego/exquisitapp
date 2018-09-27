@@ -1,0 +1,25 @@
+.dashstories{
+  @extend .container;
+  text-align: left;
+  h2 {
+    @extend .dash-section-header;
+  }
+  .card-deck.dash{
+    padding: 25px 0;
+  }
+  a {
+    color: $dark-grey;
+    div:hover{
+      color: $accent-color;
+    }
+  }
+}
+
+
+.dash-section-header{
+  padding-bottom: 15px;
+  border-bottom: 2px solid $dark-grey;
+  &:hover{
+    border-bottom: 2px solid $accent-color;
+  }
+}

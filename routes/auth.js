@@ -33,7 +33,7 @@ router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
   let imgPath = "";
 
   if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
+    res.render("auth/signup", { message: "Debes indicar un nombre de usuario y contraseña" });
     return;
   }
 
@@ -48,7 +48,7 @@ router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
+      res.render("auth/signup", { message: "El nombre de usuario ya existe" });
       return;
     }
 
@@ -67,7 +67,7 @@ router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
       res.redirect("/auth/login");
     })
     .catch(err => {
-      res.render("auth/signup", { message: "Something went wrong" });
+      res.render("auth/signup", { message: "Algo falló ☹️" });
     })
   });
 });
