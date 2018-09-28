@@ -33,3 +33,19 @@ $(document).ready(()=>{
     }
   })
 })
+
+$(".author-username").each(function(){
+  let username = $(this).html()
+  axios.get(`/api/finduserid/${username}`)
+  .then( e => {
+    let userid = e.data.id;
+    console.log(`/api/findcollabs/${userid}`)
+    axios.get(`/api/findcollabs/${userid}`)
+    .then( e => {
+      let collabs = e.data.totalCollabs;
+      let newDiv = '<p class="total-collabs"></p>';
+      let final = $(newDiv).html(`${collabs} colaboraciones`)
+      $(this).after(final)
+    })
+  }).catch( e => console.log(e))
+})

@@ -5,6 +5,7 @@ const User = require('../models/User')
 const Collab = require('../models/Collab')
 const Comment = require('../models/Comment')
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+const ObjectId = require('mongoose').Types.ObjectId; 
 
 
 router.get('/story/new', ensureLoggedIn('/auth/login'), (req, res, next) => {
@@ -102,5 +103,25 @@ router.post('/story/:id', ensureLoggedIn('/auth/login'), (req, res, next) => {
   })
 })
 
+
+router.get('/api/findcollabs/:userid', function(req, res) {
+  let id = req.params.userid;
+  Collab.find({user: new ObjectId(id)})
+  .then(collabs => {
+    let totalCollabs = collabs.length;
+    res.json({ totalCollabs });   
+  })
+});
+
+
+
+router.get('/api/finduserid/:username', function(req, res) {
+  let username = req.params.username;
+  User.findOne({username})
+  .then(user => {
+    let id = user._id
+    res.json({ id });   
+  })
+});
 
 module.exports = router;
