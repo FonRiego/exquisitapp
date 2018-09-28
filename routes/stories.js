@@ -30,6 +30,17 @@ router.post('/story/new', ensureLoggedIn('/auth/login'), (req, res, next) => {
   .catch(e => next(e))
 });
 
+router.get('/story/:storid/deletecomment/:commentid', ensureLoggedIn('auth/login'), (req, res, next) => {
+  console.log(req.params)
+  let {storid, commentid} = req.params;
+  console.log("entra")
+  Comment.findByIdAndRemove(commentid)
+  .then(() => {
+    res.redirect(`/story/${storid}`);
+  })
+  .catch(e => next(e))
+});
+
 router.get('/story/:id', (req,res, next) => {
   let message = "";
   if (req.query.valid) {
