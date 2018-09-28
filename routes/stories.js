@@ -16,12 +16,11 @@ router.post('/story/new', ensureLoggedIn('/auth/login'), (req, res, next) => {
   let content = req.body.content;
   let image_url = req.body.image_url;
   let user = req.user._id;
-  Collab.create({content, user})
+  Collab.create({content, user, image_url})
   .then( collab => {
     return Story.create({
       collaborations: [collab._id],
-      users: [user._id],
-      image_url
+      users: [user._id]
     })
   })
   .then( story => {
