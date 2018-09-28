@@ -9,7 +9,7 @@ const userSchema = new Schema({
   password: String,
   avatarName: String,
   avatarPath: {type: String, default:"/images/user_placeholder.png"},
-  facebookId: String,
+  facebookId: String
 }, {
   timestamps: {
     createdAt: 'created_at',
