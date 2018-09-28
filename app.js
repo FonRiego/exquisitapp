@@ -73,7 +73,7 @@ app.use(session({
   secret: 'irongenerator',
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 24 * 60 * 60 * 1000 },
   store: new MongoStore( { mongooseConnection: mongoose.connection, ttl: 24 * 60 * 60 })
 }))
 app.use(flash());
