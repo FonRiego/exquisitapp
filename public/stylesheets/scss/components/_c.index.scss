@@ -3,6 +3,7 @@
   background-color: $dark-grey;
   padding: 50px 0px;
   display: flex;
+  overflow: hidden;
   .index-hero-container {
     @extend .container;
     display: flex;

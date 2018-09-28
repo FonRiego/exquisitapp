@@ -34,11 +34,15 @@
     </div>
     <div class="menu">
       {{#if isUserLoggedIn}}
-      <a href="/story/new">Nuevo exquisit</a>
-      <a href="/auth/logout">Logout</a>
+      <a href="/auth/logout">Cerrar sesión</a>
+      <a href="/story/new" class="signup-layout">
+      <p>Nuevo exquisit</p>
+      </a>
       {{else}}
-      <a href="/auth/login">Login</a>
-      <a href="/auth/signup">Signup</a>
+      <a href="/auth/login">Inicia sesión</a>
+      <a href="/auth/signup" class="signup-layout">
+      <p>Regístrate</p>
+      </a>
       {{/if}}
     </div>
   </nav>
