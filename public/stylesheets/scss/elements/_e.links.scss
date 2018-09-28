@@ -4,5 +4,6 @@ a{
     @include transition(color .15s linear);
     &:hover {
         color: $accent-color;
+        text-decoration: none;
     }
 }

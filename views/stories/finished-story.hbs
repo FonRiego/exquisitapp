@@ -1,5 +1,9 @@
 <header class="finished-story-header">
-  <h2>La historia</h2>
+  <h2 class="exquisit-story">
+    {{#each story.collaborations}}
+    {{content}}
+    {{/each}}
+  </h2>
   <div class="finished-story-images">
     {{#each story.collaborations}}
     <div class="final-gif">
@@ -9,39 +13,95 @@
   </div>
 </header>
 <main>
-  <div class="container">
-    <div>
-      <h2>THE STORY:</h2>
-      <p>
-        {{#each story.collaborations}}
-        {{content}}
-        {{/each}}
-      </p>
+  <section>
+    <div class="container autores">
+      <div class="title-header-section">
+        <h2><img src="https://i0.wp.com/frenky.id/wp-content/uploads/2018/02/cropped-doge-icon-2.png" alt="" width="40px"> Participantes</h2>
+      </div>
+      <div class="aportacion">
+        <div class="card-bottom">
+          <div class="card-thumbnail">
+            <img src="{{story.collaborations.0.user.avatarPath}}">
+          </div>
+          <div class="card-author">
+            <p class="muted-pre-title">Iniciado por</p>
+            <p class="author-username">{{story.collaborations.0.user.username}}</p>
+          </div>
+        </div>
+        <div class="contenido-individual">
+          <p>"{{story.collaborations.0.content}}..."</p>
+        </div>
+      </div>
+
+      <div class="aportacion">
+        <div class="card-bottom">
+          <div class="card-thumbnail">
+            <img src="{{story.collaborations.1.user.avatarPath}}">
+          </div>
+          <div class="card-author">
+            <p class="muted-pre-title">Acción añadida por</p>
+            <p class="author-username">{{story.collaborations.1.user.username}}</p>
+          </div>
+        </div>
+        <div class="contenido-individual">
+          <p>"...{{story.collaborations.1.content}}..."</p>
+        </div>
+      </div>
+
+      <div class="aportacion">
+        <div class="card-bottom">
+          <div class="card-thumbnail">
+            <img src="{{story.collaborations.2.user.avatarPath}}">
+          </div>
+          <div class="card-author">
+            <p class="muted-pre-title">Contexto añadido por</p>
+            <p class="author-username">{{story.collaborations.2.user.username}}</p>
+          </div>
+        </div>
+        <div class="contenido-individual">
+          <p>"...{{story.collaborations.2.content}}"</p>
+        </div>
+      </div>
+
     </div>
-    <div>
-      <h3>THE AUTHORS:</h3>
-      <p>
-        {{#each story.collaborations}}
-        {{user.username}}
-        {{/each}}
-      </p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="comment-creation">
-      <h3>Añade un comentario</h3>
-      <form action="/story/{{story._id}}/newcomment" id="comment-form" method="POST">
-        <input id="comment-content" type="text" name="content" placeholder="Tu comentario...">
-        {{#if message }}
+  </section>
+
+  <section class="cont-comment">
+    <div class="container">
+      {{#if isUserLoggedIn}}
+      <div class="comment-creation">
+        <p>Añade un comentario</p>
+        <form action="/story/{{story._id}}/newcomment" id="comment-form" method="POST">
+          <input id="comment-content" type="text" name="content" placeholder="Tu comentario..." class="form-control">
+          {{#if message }}
           <div class="error-message">{{ message }}</div>
-        {{/if}}
-        <button id="addcomment">Enviar</button>
-      </form>
-    </div>
-    <div class="comments-container">
-      {{#each comments}}
+          {{/if}}
+          <button id="addcomment" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+      {{/if}}
+      <div class="comments-container">
+        {{#each comments}}
         {{> comment}}
-      {{/each}}
+        {{/each}}
+      </div>
     </div>
-  </div>
+  </section>
 </main>
+
+{{!--
+<h3>THE AUTHORS:</h3>
+<p>
+  {{#each story.collaborations}}
+  {{user.username}}
+  {{/each}}
+</p> --}}
+{{!-- <div>
+  <h3 class="exquisit-creator">Exquisit inciado por {{story.collaborations.0.user.username}}</h3>
+  <p>
+    {{#each story.collaborations}}
+    {{content}}
+    {{/each}}
+  </p>
+</div> --}}
+{{!-- <h2 class="exquisit-creator">Exquisit inciado por {{story.collaborations.0.user.username}}</h2> --}}

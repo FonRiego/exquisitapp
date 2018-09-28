@@ -1,11 +1,50 @@
-.comments-container {
-  width: 400px;
-  margin: 0 auto;
 
+
+.cont-comment {
+  background-color: $extra-light-grey;
+  .container {
+    padding: 60px 30px;
+    .comment-creation {
+      text-align: left;
+      padding-bottom: 60px;
+      border-bottom: 1px solid darkslategrey;
+      margin-bottom: 60px;
+      input {
+        padding: 20px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+    .comments-container {
+      .comment {
+        text-align: left;
+        padding-bottom: 30px;
+        .coment-user {
+          p {
+            margin-bottom: 5px;
+          }
+        }
+        .form-control {
+          padding: 20px;
+          height: auto;
+          p {
+            margin-bottom: 0;
+          }
+        }
+        .delete-comment{
+          padding-top: 20px;
+        }
+      }
+    }
+  }
 }
 
-.comment-content{
+.comments-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.comment-content {
   border: solid 1px $dark-grey;
   border-radius: 20px;
-
 }
