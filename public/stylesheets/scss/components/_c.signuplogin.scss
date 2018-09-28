@@ -1,51 +1,52 @@
 .animated-background {
-	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.connect-box{
+.connect-box {
+  margin: 50px 0;
   padding: 40px;
   background-color: white;
   border-radius: 5px;
@@ -74,7 +75,7 @@
       position: absolute;
       z-index: -1;
     }
-    .error-message{
+    .error-message {
       padding: 20px 0px;
       color: red;
     }
@@ -85,24 +86,23 @@
       background-color: white;
       margin-top: 20px;
       width: 100%;
-      &.signup{
+      &.signup {
         background-color: $secondary-accent-color;
         border: none;
         color: white;
         margin-top: 35px;
-        &:hover{
+        &:hover {
           background-color: $accent-color;
         }
       }
     }
   }
-  .account-message{
+  .account-message {
     padding-top: 20px;
     font-size: 13px;
     min-width: 300px;
   }
 }
-
 
 .inputfile + label {
   @extend .buttonpersonal;
@@ -118,4 +118,48 @@
 
 .inputfile:focus + label,
 .inputfile + label:hover {
+}
+
+.facebook-connection {
+  padding: 40px 0 20px;
+  .facebook-separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .sad-line {
+      flex: 1 0 auto;
+      border-top: 1px solid $light-grey;
+      height: 1px;
+      box-sizing: border-box;
+    }
+    .sad-or {
+      flex: 0 0 auto;
+      padding: 0 5px;
+      box-sizing: border-box;
+      // color: $light-grey;
+      font-size: 13px;
+    }
+  }
+  .facebook-conn-button {
+    @extend .buttonpersonal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    width: 100%;
+    background-color: #3b5998;
+    border: none;
+    color: white;
+    p{
+      margin:0;
+      margin-left: 20px;
+    }
+    img{
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+  }
 }

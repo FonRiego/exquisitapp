@@ -1,33 +1,31 @@
 .dashstories {
   @extend .container;
-  .title-header-section {
-    color: $dark-grey;
-    text-align: left;
-    h2 {
-      // padding-bottom: 15px;
-      // border-bottom: 2px solid $dark-grey;
-      //   border-bottom: 2px solid $accent-color;
-      &:hover {
-        color: $accent-color;
-      }
-    }
+  .card-deck.dash {
+    padding: 25px 0;
+  }
+}
+
+.title-header-section {
+  color: $dark-grey;
+  text-align: left;
+  h2 {
+    // padding-bottom: 15px;
+    // border-bottom: 2px solid $dark-grey;
+    //   border-bottom: 2px solid $accent-color;
     &:hover {
       color: $accent-color;
     }
   }
-
-  .card-deck.dash {
-    padding: 25px 0;
+  &:hover {
+    color: $accent-color;
   }
-
-  
 }
 
 .empty-deck {
-  &.continue{
+  &.continue {
     background-image: url("/images/foreverAlone.png");
   }
-  &.mystories{
+  &.mystories {
     background-image: url("/images/herpderp.png");
   }
   background-color: $light-grey;
@@ -66,5 +64,3 @@
     border: 2px solid $accent-color;
   }
 }
-
-
