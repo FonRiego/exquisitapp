@@ -11,7 +11,7 @@ $(document).ready( ()=> {
 
 const getRandomGif = () => {
   axios
-  .get("https://api.giphy.com/v1/gifs/random?api_key=pICam2pCKXI5lGSFpXFvWsNEvZuiARPh")
+  .get("https://api.giphy.com/v1/gifs/random?api_key=lDIdvYhkGMTpAXEjRsXHmekRz9VVwDzX")
   .then( giphy => {
     let gifUrl = giphy.data.data.image_original_url;
     $('#giphy-image-randomizer img').prop("src", gifUrl);
