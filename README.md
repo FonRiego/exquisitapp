@@ -2,7 +2,7 @@
 #### [Try it here](https://exquisit-app.herokuapp.com/)
 
 ## About
-exquisit.app is a social platform where registered users can create stories from gifs. 
+exquisit.app is a social platform where registered users can create stories from gifs. The idea is loosely based on the [Exquisit Corpse surrealist game](https://en.wikipedia.org/wiki/Exquisite_corpse).
 
 This project was developed in *Ironhack's Web Development Bootcamp* back-end module and was featured as one of the top 3 best projects.
 
@@ -16,4 +16,4 @@ This project was developed in *Ironhack's Web Development Bootcamp* back-end mod
 - Handlebars.js
 - SASS
 - GIPHY API
-- Facebook Login
+- Facebook Login API
