@@ -1,23 +1,21 @@
-<header class="index-header animated-background">
-  <div class="index-hero-container">
-    <div class="index-hero-gifs">
-      <div class="hero-gif num1">
-      <img src="https://media3.giphy.com/media/xT9IgoiyvYeTLbBqxO/giphy.gif">
-      </div>
-      <div class="hero-gif num2">
-      <img src="https://media3.giphy.com/media/l1J9FiGxR61OcF2mI/giphy.gif">
-      </div>
-      <div class="hero-gif num3">
-      <img src="https://media3.giphy.com/media/pPhyAv5t9V8djyRFJH/giphy.gif">
-      </div>
-    </div>
-    <div class="index-hero-cta">
-    <h1>Historias absurdas con tus amigos</h1>
-    <p>Combina frases y gifs a ciegas para crear nuevos memes surrealistas</p>
+<main>
+  <div class="animated-background dash"></div>
+  <div class="container">
+    <h2 class="page-title">Explorador de exquisits</h2>
+    <div class="card-deck">
+      {{#each stories}}
+      {{> storyCard}}
+      {{/each}}
     </div>
   </div>
-</header>
-
-<main>
-
+  {{#if isUserLoggedIn}}
+  <div class="card-button">
+    <a href="/dashboard">Ve a tu dashboard</a>
+  </div>
+  {{else}}
+  <div class="card-button">
+    <a href="/auth/signup">Regístrate y crea exquisits</a>
+  </div>
+  {{/if}}
+  <div class="animated-background dash"></div>
 </main>
